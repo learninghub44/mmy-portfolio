@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic"
 import { ScrollProgress } from "@/components/scroll-progress"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { Masthead } from "@/components/masthead"
 
 const Hero = dynamic(() => import("@/components/hero").then(mod => ({ default: mod.Hero })))
 const About = dynamic(() => import("@/components/about").then(mod => ({ default: mod.About })))
@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <ScrollProgress />
-      <ThemeToggle />
+      <Masthead />
       <Hero />
       <About />
       <Skills />

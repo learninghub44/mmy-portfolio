@@ -13,175 +13,154 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
     console.log(formData)
     alert("Thank you for your message! I'll get back to you soon.")
     setFormData({ name: "", email: "", message: "" })
   }
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
+    <section id="contact" className="py-20 lg:py-28 bg-paper border-b border-line">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="mb-12 border-b border-line pb-6"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-rust">
+            Letters &middot; 07
+          </span>
+          <h2 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-ink mt-3">
             Get In Touch
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
-            Let's work together on your next project
-          </p>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-5"
           >
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-                Contact Information
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-8">
-                Feel free to reach out to me through any of these channels. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-              </p>
-            </div>
+            <p className="text-lg text-ink-soft leading-relaxed mb-8">
+              Open to discussing new projects, freelance work, or
+              opportunities to be part of your build. Reach out through
+              whichever channel suits you.
+            </p>
 
-            <div className="space-y-4">
-              <motion.a
-                whileHover={{ x: 5 }}
+            <div className="divide-y divide-line border-t border-b border-line">
+              <a
                 href="mailto:chrisdeveloper8@gmail.com"
-                className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                className="flex items-center gap-4 py-5 group hover:bg-card transition-colors px-2 -mx-2"
               >
-                <div className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
-                  <Mail className="h-5 w-5" />
-                </div>
+                <Mail className="h-5 w-5 text-rust" strokeWidth={1.5} />
                 <div>
-                  <p className="font-medium text-gray-900 dark:text-white">Email</p>
-                  <p className="text-gray-600 dark:text-gray-400">chrisdeveloper8@gmail.com</p>
+                  <p className="font-mono text-xs uppercase tracking-wider text-ink-soft">Email</p>
+                  <p className="text-ink group-hover:text-rust transition-colors">chrisdeveloper8@gmail.com</p>
                 </div>
-              </motion.a>
+              </a>
 
-              <motion.a
-                whileHover={{ x: 5 }}
+              <a
                 href="https://wa.me/254701059192"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                className="flex items-center gap-4 py-5 group hover:bg-card transition-colors px-2 -mx-2"
               >
-                <div className="p-3 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
-                  <MessageCircle className="h-5 w-5" />
-                </div>
+                <MessageCircle className="h-5 w-5 text-rust" strokeWidth={1.5} />
                 <div>
-                  <p className="font-medium text-gray-900 dark:text-white">WhatsApp</p>
-                  <p className="text-gray-600 dark:text-gray-400">+254 701 059 192</p>
+                  <p className="font-mono text-xs uppercase tracking-wider text-ink-soft">WhatsApp</p>
+                  <p className="text-ink group-hover:text-rust transition-colors">+254 701 059 192</p>
                 </div>
-              </motion.a>
+              </a>
 
-              <motion.a
-                whileHover={{ x: 5 }}
+              <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                className="flex items-center gap-4 py-5 group hover:bg-card transition-colors px-2 -mx-2"
               >
-                <div className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
-                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </div>
+                <svg className="h-5 w-5 text-rust" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
                 <div>
-                  <p className="font-medium text-gray-900 dark:text-white">LinkedIn</p>
-                  <p className="text-gray-600 dark:text-gray-400">Connect with me</p>
+                  <p className="font-mono text-xs uppercase tracking-wider text-ink-soft">LinkedIn</p>
+                  <p className="text-ink group-hover:text-rust transition-colors">Connect with me</p>
                 </div>
-              </motion.a>
+              </a>
 
-              <motion.div
-                whileHover={{ x: 5 }}
-                className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 dark:bg-gray-800"
-              >
-                <div className="p-3 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
-                  <MapPin className="h-5 w-5" />
-                </div>
+              <div className="flex items-center gap-4 py-5 px-2 -mx-2">
+                <MapPin className="h-5 w-5 text-rust" strokeWidth={1.5} />
                 <div>
-                  <p className="font-medium text-gray-900 dark:text-white">Location</p>
-                  <p className="text-gray-600 dark:text-gray-400">Kenya</p>
+                  <p className="font-mono text-xs uppercase tracking-wider text-ink-soft">Location</p>
+                  <p className="text-ink">Nairobi, Kenya</p>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
 
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="lg:col-span-7"
           >
-            <form onSubmit={handleSubmit} className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
-              <div className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    placeholder="Your name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
-                    placeholder="Tell me about your project..."
-                  />
-                </div>
-
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-shadow"
-                >
-                  Send Message
-                </motion.button>
+            <form onSubmit={handleSubmit} className="border border-line bg-card p-6 sm:p-8 space-y-6">
+              <div>
+                <label htmlFor="name" className="block font-mono text-xs uppercase tracking-wider text-ink-soft mb-2">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full px-4 py-3 bg-paper border border-line text-ink focus:outline-none focus:border-rust transition-colors"
+                  placeholder="Your name"
+                />
               </div>
+
+              <div>
+                <label htmlFor="email" className="block font-mono text-xs uppercase tracking-wider text-ink-soft mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full px-4 py-3 bg-paper border border-line text-ink focus:outline-none focus:border-rust transition-colors"
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block font-mono text-xs uppercase tracking-wider text-ink-soft mb-2">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  required
+                  rows={5}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="w-full px-4 py-3 bg-paper border border-line text-ink focus:outline-none focus:border-rust transition-colors resize-none"
+                  placeholder="Tell me about your project..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full py-4 bg-ink text-paper font-mono text-xs uppercase tracking-wider hover:bg-rust transition-colors"
+              >
+                Send Message
+              </button>
             </form>
           </motion.div>
         </div>

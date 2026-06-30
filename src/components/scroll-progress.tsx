@@ -10,7 +10,7 @@ export function ScrollProgress() {
     const updateScrollProgress = () => {
       const scrollTop = window.scrollY
       const docHeight = document.documentElement.scrollHeight - window.innerHeight
-      const progress = (scrollTop / docHeight) * 100
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
       setScrollProgress(progress)
     }
 
@@ -20,7 +20,7 @@ export function ScrollProgress() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 z-50 origin-left"
+      className="fixed top-0 left-0 right-0 h-[3px] bg-rust z-[60] origin-left"
       style={{ scaleX: scrollProgress / 100 }}
       initial={{ scaleX: 0 }}
     />
